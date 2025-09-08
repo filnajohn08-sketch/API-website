@@ -1,1 +1,26 @@
-<p>contact works!</p>
+<div class="info">
+  <div class="card" (click)="showDetails('email')">
+    <span class="icon">📧</span>
+    <h3>Email</h3>
+    <p>support@lumea.com</p>
+  </div>
+  <div class="card" (click)="showDetails('phone')">
+    <span class="icon">📞</span>
+    <h3>Phone</h3>
+    <p>+91 98765 43210</p>
+  </div>
+  <div class="card" (click)="showDetails('address')">
+    <span class="icon">📍</span>
+    <h3>Address</h3>
+    <p>21 Bloomora Street, Orchid Heights,<br> Bengaluru, India</p>
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedDetail">
+  <div class="modal-content">
+    <span class="close" (click)="selectedDetail=null">&times;</span>
+    <h2>{{selectedDetail.title}}</h2>
+    <p>{{selectedDetail.content}}</p>
+  </div>
+</div>
+
